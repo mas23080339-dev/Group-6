@@ -29,7 +29,7 @@ tfidf_matrix = vectorizer.fit_transform(df["FullText"])
 
 # 3) Giao diện Streamlit
 st.set_page_config(page_title="Demo CBF trong kinh doanh bán hàng", layout="wide")
-st.title("Chúng tôi bán đồ hàng hiệu, mọi sản phẩm bạn cần chúng tôi đều có ;)")
+st.title("Chúng tôi bán đồ hàng hiệu, mọi sản phẩm bạn cần chúng tôi đều có (chỉ bán đồ về adidas, nike, lacoste, puma, gucci. Những cái khác chúng tôi sẽ mở rộng phát triển thêm sau) ;)")
 st.write("Tìm sản phẩm dựa trên mô tả / từ khóa bạn nhập vào.")
 
 user_query = st.text_input("Nhập sản phẩm bạn muốn tìm:")
