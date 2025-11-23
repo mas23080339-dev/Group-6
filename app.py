@@ -49,7 +49,7 @@ if user_query:
         st.write(f"**Tên:** {df.loc[best_idx, 'Tên sản phẩm']}")
         st.write(f"**Mô tả:** {df.loc[best_idx, 'Mô tả']}")
         st.write(f"**Giá:** {df.loc[best_idx, 'Giá']}")
-        st.write(f"**Rate:** {df.loc[best_idx, 'Rate']}")
+        st.write(f"**Điểm đánh giá:** {df.loc[best_idx, 'Điểm đánh giá']}")
         st.write(f"**Similarity:** `{scores[best_idx]:.3f}`")
 
         st.subheader("Có thể bạn thích sản phẩm này:")
@@ -58,6 +58,6 @@ if user_query:
                 break
             st.write(f"**Tên:** {df.loc[idx, 'Tên sản phẩm']}")    
             st.write(f"Giá: {df.loc[idx, 'Giá']}")
-            st.write(f"Rate: {df.loc[idx, 'Rate']}")
+            st.write(f"Điểm đánh giá: {df.loc[idx, 'Điểm đánh giá']}")
             st.write(f"Similarity: `{scores[idx]:.3f}`")
             st.write("---")
