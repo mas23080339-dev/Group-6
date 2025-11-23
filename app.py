@@ -6,7 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # 1) Load & xử lý dữ liệu
 @st.cache_data
 def load_data():
-    df = pd.read_csv("data.csv")
+    df = pd.read_csv("Gr6.csv")
 
     # Chuẩn hóa cột Từ khóa 
     df["Từ khóa"] = df["Từ khóa"].fillna("").str.replace(";", " ")
