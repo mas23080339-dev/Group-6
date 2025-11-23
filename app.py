@@ -28,9 +28,9 @@ vectorizer = TfidfVectorizer()
 tfidf_matrix = vectorizer.fit_transform(df["FullText"])
 
 # 3) Giao diện Streamlit
-st.set_page_config(page_title="CBF Product Recommendation", layout="wide")
-st.title("Hệ thống gợi ý sản phẩm (CBF)")
-st.write("Tìm sản phẩm phù hợp dựa trên mô tả / từ khóa bạn nhập vào.")
+st.set_page_config(page_title="Demo CBF trong kinh doanh bán hàng", layout="wide")
+st.title("Chúng tôi bán đồ hàng hiệu, mọi sản phẩm bạn cần chúng tôi đều có ;)")
+st.write("Tìm sản phẩm dựa trên mô tả / từ khóa bạn nhập vào.")
 
 user_query = st.text_input("Nhập sản phẩm bạn muốn tìm:")
 
