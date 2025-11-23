@@ -56,7 +56,8 @@ if user_query:
         for idx in ranking[1:6]:
             if scores[idx] < threshold:
                 break
-            st.write(f"**Tên:** {df.loc[idx, 'Tên sản phẩm']}")    
+            st.write(f"**Tên:** {df.loc[idx, 'Tên sản phẩm']}")
+            st.write(f"**Mô tả:** {df.loc[idx, 'Mô tả']}") 
             st.write(f"Giá: {df.loc[idx, 'Giá']}")
             st.write(f"Điểm đánh giá: {df.loc[idx, 'Điểm đánh giá']}")
             st.write(f"Similarity: `{scores[idx]:.3f}`")
