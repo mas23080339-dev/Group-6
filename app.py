@@ -28,11 +28,11 @@ vectorizer = TfidfVectorizer()
 tfidf_matrix = vectorizer.fit_transform(df["FullText"])
 
 # 3) Giao diện Streamlit
-st.set_page_config(page_title="Demo CBF trong kinh doanh bán hàng", layout="wide")
-st.title("Chúng tôi bán đồ hàng hiệu, mọi sản phẩm bạn cần chúng tôi đều có (chỉ bán đồ về adidas, nike, lacoste, puma, gucci. Những cái khác chúng tôi sẽ mở rộng phát triển thêm sau) ;)")
-st.write("Tìm sản phẩm dựa trên mô tả / từ khóa bạn nhập vào.")
+st.set_page_config(page_title="Demo CBF in small business", layout="wide")
+st.title("Welcome to our store, we have many product from Adidas, Nike, Lacoste, Puma, Gucci.")
+st.write("Our system will find product rely on your input (description/keywords).")
 
-user_query = st.text_input("Nhập sản phẩm bạn muốn tìm:")
+user_query = st.text_input("Please enter your product:")
 
 if user_query:
     query_vec = vectorizer.transform([user_query])
@@ -42,10 +42,10 @@ if user_query:
     threshold = 0.1
 
     if scores[ranking[0]] < threshold:
-        st.warning("Không tìm thấy sản phẩm phù hợp.")
+        st.warning("Cant find any stuff that you want !")
     else:
         best_idx = ranking[0]
-        st.subheader("Sản phẩm của chúng tôi:")
+        st.subheader("Our product:")
         st.write(f"**Tên:** {df.loc[best_idx, 'Tên sản phẩm']}")
         st.write(f"**Mô tả:** {df.loc[best_idx, 'Mô tả']}")
         st.write(f"**Giá:** {df.loc[best_idx, 'Giá']}")
@@ -53,7 +53,7 @@ if user_query:
         st.write(f"**Điểm đánh giá:** {df.loc[best_idx, 'Điểm đánh giá']}")
         st.write(f"**Similarity:** `{scores[best_idx]:.3f}`")
 
-        st.subheader("Có thể bạn thích sản phẩm này:")
+        st.subheader("Maybe you like this product:")
         for idx in ranking[1:6]:
             if scores[idx] < threshold:
                 break
